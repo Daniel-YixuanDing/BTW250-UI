@@ -1,0 +1,141 @@
+/* Minimal utility classes inspired by Tailwind so the prototype looks good without requiring a full Tailwind setup.
+If you want to use real Tailwind, replace these utilities and follow Tailwind install steps in README. */
+
+
+:root {
+    --brand: #0b5cff;
+    /* Illini-ish blue */
+    --muted: #6b7280;
+    --bg: #f8fafc;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    margin: 0;
+    background: var(--bg);
+    color: #0f172a
+}
+
+.container {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 20px
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(12, 18, 30, 0.06);
+    padding: 18px
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.logo .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--brand), #7aa2ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--brand);
+    color: white;
+    border: none;
+    cursor: pointer
+}
+
+.btn.secondary {
+    background: #eef2ff;
+    color: var(--brand);
+    border: 1px solid #e6eefc
+}
+
+.grid {
+    display: grid;
+    gap: 12px
+}
+
+.grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.small {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+.lane {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px dashed #e6eefc;
+    text-align: center
+}
+
+.lane.taken {
+    background: #fff3f2;
+    border-style: solid;
+    border-color: #ffdad4
+}
+
+.lane.available {
+    background: #f3fff2;
+    border-style: solid;
+    border-color: #d4ffda
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #e6e9ef;
+    width: 100%
+}
+
+.time-pill {
+    padding: 6px 8px;
+    border-radius: 999px;
+    border: 1px solid #e6eefc
+}
+
+
+/* Responsive */
+@media(min-width:900px) {
+    .grid.lanes {
+        grid-template-columns: repeat(7, 1fr)
+    }
+}
