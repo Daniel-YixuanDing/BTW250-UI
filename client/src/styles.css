@@ -1,9 +1,10 @@
-/* Minimal utility classes inspired by Tailwind so the prototype looks good without requiring a full Tailwind setup.
-If you want to use real Tailwind, replace these utilities and follow Tailwind install steps in README. */
-
+/* Basic CSS utilities to mimic Tailwind CSS functionality.
+   If you want to use real Tailwind, replace these utilities and follow Tailwind install steps in README. */
 :root {
-    --brand: #0b5cff;
-    /* Illini-ish blue */
+    --brand: #002e8b;
+    /* Illini blue */
+    --accent: #ff5f15;
+    /* Illini orange */
     --muted: #6b7280;
     --bg: #f8fafc;
 }
@@ -82,7 +83,7 @@ h3 {
 .btn {
     padding: 10px 16px;
     border-radius: 8px;
-    background: var(--brand);
+    background: var(--accent);
     color: white;
     border: none;
     cursor: pointer;
@@ -92,7 +93,7 @@ h3 {
 }
 
 .btn:hover:not(:disabled) {
-    background: #0849cc
+    background: #ff7c3d
 }
 
 .btn:disabled {
