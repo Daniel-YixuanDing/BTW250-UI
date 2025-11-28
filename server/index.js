@@ -39,6 +39,30 @@ app.post('/api/logout', (req, res) => {
     res.json({ ok: true });
 });
 
+app.post('/api/register', (req, res) => {
+    const { username, password, displayName } = req.body;
+
+    if (!username || !password || !displayName) {
+        return res.status(400).json({ error: 'Missing fields' });
+    }
+
+    if (users.find(u => u.username === username)) {
+        return res.status(409).json({ error: 'Username already taken' });
+    }
+
+    const id = uuidv4();
+    const newUser = { id, username, password, displayName };
+    users.push(newUser);
+
+    const token = uuidv4();
+    sessions[token] = id;
+
+    res.json({
+        token,
+        user: { id, displayName }
+    });
+});
+
 
 function requireAuth(req, res, next) {
     const token = req.headers['x-auth-token'];
