@@ -19,6 +19,16 @@ export async function logout(token) {
     return r.json();
 }
 
+export async function register(username, password, displayName) {
+    const r = await fetch(`${BASE}/api/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password, displayName })
+    });
+    if (!r.ok) throw await r.json();
+    return r.json();
+}
+
 export async function fetchLanes() {
     const r = await fetch(`${BASE}/api/lanes`);
     if (!r.ok) throw await r.json();
