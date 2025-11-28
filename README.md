@@ -8,7 +8,7 @@
 - Check your reservation status and cancel
 - In-memory server (for prototype/demo)
 
-## Run locally
+## Run locally 
 
 
 1. Install dependencies for server and client:
